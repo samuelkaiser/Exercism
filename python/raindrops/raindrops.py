@@ -4,15 +4,10 @@ def convert(number):
                     '7' : 'Plong'}
     
     raindropString = '';
-
-    if((number % 3) == 0):
-        raindropString += factorValues['3']
     
-    if((number % 5) == 0):
-        raindropString += factorValues['5']
-    
-    if((number % 7) == 0):
-        raindropString += factorValues['7']
+    for key, value in factorValues.items():
+        if((number % int(key)) == 0):
+            raindropString += value
 
     if not raindropString:
         raindropString += str(number)
